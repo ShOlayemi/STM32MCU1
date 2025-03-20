@@ -1,0 +1,14 @@
+2025-01-08 12:15:19,898 [INFO] MainUpdater:2872 - connection check result : 10
+2025-01-08 12:15:22,018 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-01-08 12:15:22,118 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-01-08 12:15:22,162 [INFO] FinderPluginLoader:95 - Searching for filters in installed packs
+2025-01-08 12:15:29,607 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-01-08 12:15:29,613 [INFO] DetailPanel:341 - Set advertising image to C:/Users/User/STM32Cube/Repository/\en.prom-stm32n6-mcu-finder.png
+2025-01-08 12:16:07,853 [INFO] ApiDb:581 - Connected to CubeFinder SQLite database (C:\Users\User\.stmcufinder\plugins\mcufinder\mcu\cube-finder-db.db)
+2025-01-08 12:19:09,912 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-01-08 12:19:09,926 [INFO] ApiDb:448 - Save user favorites file C:\Users\User/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-01-08 12:19:09,926 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-01-08 13:16:55,108 [INFO] WebApp:190 - Connection lost
+2025-01-08 13:16:56,025 [INFO] WebApp:187 - Connection restablished
+2025-01-08 16:21:14,041 [INFO] WebApp:190 - Connection lost
+2025-01-08 16:21:15,930 [INFO] WebApp:187 - Connection restablished

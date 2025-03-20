@@ -1,0 +1,10 @@
+00:05:43 **** Incremental Build of configuration Debug for project PERIADC ****
+make -j4 all 
+arm-none-eabi-size  PERIADC.elf 
+   text	   data	    bss	    dec	    hex	filename
+    696	      0	   1568	   2264	    8d8	PERIADC.elf
+Finished building: default.size.stdout
+ 
+
+00:05:44 Build Finished. 0 errors, 0 warnings. (took 466ms)
+

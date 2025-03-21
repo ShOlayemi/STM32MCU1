@@ -201,8 +201,8 @@ int main(void)
 	GpioLed.pGPIOx = GPIOD;
  8000222:	4b0c      	ldr	r3, [pc, #48]	@ (8000254 <main+0x38>)
  8000224:	607b      	str	r3, [r7, #4]
-	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_12;
- 8000226:	230c      	movs	r3, #12
+	GpioLed.GPIO_PinConfig.GPIO_PinNumber = GPIO_PIN_NO_15;
+ 8000226:	230f      	movs	r3, #15
  8000228:	723b      	strb	r3, [r7, #8]
 	GpioLed.GPIO_PinConfig.GPIO_PinMode = GPIO_MODE_OUT;
  800022a:	2301      	movs	r3, #1
@@ -229,8 +229,8 @@ int main(void)
 
 	while(1)
 	{
-		GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_12);
- 800024a:	210c      	movs	r1, #12
+		GPIO_ToggleOutputPin(GPIOD, GPIO_PIN_NO_15);
+ 800024a:	210f      	movs	r1, #15
  800024c:	4801      	ldr	r0, [pc, #4]	@ (8000254 <main+0x38>)
  800024e:	f000 f9bb 	bl	80005c8 <GPIO_ToggleOutputPin>
  8000252:	e7fa      	b.n	800024a <main+0x2e>

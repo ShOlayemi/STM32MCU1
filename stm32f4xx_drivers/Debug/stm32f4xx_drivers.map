@@ -256,23 +256,23 @@ Discarded input sections
  .text          0x00000000       0x14 ./Startup/startup_stm32f407vgtx.o
  .data          0x00000000        0x0 ./Startup/startup_stm32f407vgtx.o
  .bss           0x00000000        0x0 ./Startup/startup_stm32f407vgtx.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .group         0x00000000        0xc ./drivers/Src/03led_button_ext.o
- .text          0x00000000        0x0 ./drivers/Src/03led_button_ext.o
- .data          0x00000000        0x0 ./drivers/Src/03led_button_ext.o
- .bss           0x00000000        0x0 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000000      0xae4 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000000       0x22 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000000      0x103 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000000       0x6a ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000000      0x1df ./drivers/Src/03led_button_ext.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .group         0x00000000        0xc ./drivers/Src/03led_button_ext2_PUres.o
+ .text          0x00000000        0x0 ./drivers/Src/03led_button_ext2_PUres.o
+ .data          0x00000000        0x0 ./drivers/Src/03led_button_ext2_PUres.o
+ .bss           0x00000000        0x0 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000000      0xae4 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000000       0x22 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000000      0x103 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000000       0x6a ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000000      0x1df ./drivers/Src/03led_button_ext2_PUres.o
  .group         0x00000000        0xc ./drivers/Src/stm32f407xx_gpio_driver.o
  .group         0x00000000        0xc ./drivers/Src/stm32f407xx_gpio_driver.o
  .group         0x00000000        0xc ./drivers/Src/stm32f407xx_gpio_driver.o
@@ -546,7 +546,7 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD ./Src/syscalls.o
 LOAD ./Src/sysmem.o
 LOAD ./Startup/startup_stm32f407vgtx.o
-LOAD ./drivers/Src/03led_button_ext.o
+LOAD ./drivers/Src/03led_button_ext2_PUres.o
 LOAD ./drivers/Src/stm32f407xx_gpio_driver.o
 START GROUP
 LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a
@@ -681,9 +681,9 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x08000218                DMA2_Stream6_IRQHandler
                 0x08000218                DMA1_Stream3_IRQHandler
  *fill*         0x0800021a        0x2 
- .text.delay    0x0800021c       0x2c ./drivers/Src/03led_button_ext.o
+ .text.delay    0x0800021c       0x2c ./drivers/Src/03led_button_ext2_PUres.o
                 0x0800021c                delay
- .text.main     0x08000248       0x78 ./drivers/Src/03led_button_ext.o
+ .text.main     0x08000248       0x78 ./drivers/Src/03led_button_ext2_PUres.o
                 0x08000248                main
  .text.GPIO_PeriClockControl
                 0x080002c0      0x1d0 ./drivers/Src/stm32f407xx_gpio_driver.o
@@ -835,7 +835,7 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .ARM.attributes
                 0x00000056       0x21 ./Startup/startup_stm32f407vgtx.o
  .ARM.attributes
-                0x00000077       0x34 ./drivers/Src/03led_button_ext.o
+                0x00000077       0x34 ./drivers/Src/03led_button_ext2_PUres.o
  .ARM.attributes
                 0x000000ab       0x34 ./drivers/Src/stm32f407xx_gpio_driver.o
  .ARM.attributes
@@ -848,10 +848,10 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libm.a
 LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard\libgcc.a
 
-.debug_line     0x00000000      0xd09
+.debug_line     0x00000000      0xd10
  .debug_line    0x00000000       0x7b ./Startup/startup_stm32f407vgtx.o
- .debug_line    0x0000007b      0x4d0 ./drivers/Src/03led_button_ext.o
- .debug_line    0x0000054b      0x7be ./drivers/Src/stm32f407xx_gpio_driver.o
+ .debug_line    0x0000007b      0x4d7 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_line    0x00000552      0x7be ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_line_str
                 0x00000000       0x4f
@@ -860,51 +860,51 @@ LOAD C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
 
 .debug_info     0x00000000      0x860
  .debug_info    0x00000000       0x30 ./Startup/startup_stm32f407vgtx.o
- .debug_info    0x00000030      0x28f ./drivers/Src/03led_button_ext.o
+ .debug_info    0x00000030      0x28f ./drivers/Src/03led_button_ext2_PUres.o
  .debug_info    0x000002bf      0x5a1 ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_abbrev   0x00000000      0x2d8
  .debug_abbrev  0x00000000       0x24 ./Startup/startup_stm32f407vgtx.o
- .debug_abbrev  0x00000024      0x12a ./drivers/Src/03led_button_ext.o
+ .debug_abbrev  0x00000024      0x12a ./drivers/Src/03led_button_ext2_PUres.o
  .debug_abbrev  0x0000014e      0x18a ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_aranges  0x00000000       0xa8
  .debug_aranges
                 0x00000000       0x28 ./Startup/startup_stm32f407vgtx.o
  .debug_aranges
-                0x00000028       0x28 ./drivers/Src/03led_button_ext.o
+                0x00000028       0x28 ./drivers/Src/03led_button_ext2_PUres.o
  .debug_aranges
                 0x00000050       0x58 ./drivers/Src/stm32f407xx_gpio_driver.o
 
-.debug_str      0x00000000     0x53a1
- .debug_str     0x00000000     0x53a1 ./Startup/startup_stm32f407vgtx.o
+.debug_str      0x00000000     0x53a8
+ .debug_str     0x00000000     0x53a8 ./Startup/startup_stm32f407vgtx.o
                                  0x6b (size before relaxing)
- .debug_str     0x000053a1     0x5303 ./drivers/Src/03led_button_ext.o
- .debug_str     0x000053a1     0x5492 ./drivers/Src/stm32f407xx_gpio_driver.o
+ .debug_str     0x000053a8     0x530a ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_str     0x000053a8     0x5492 ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_rnglists
                 0x00000000       0x72
  .debug_rnglists
                 0x00000000       0x19 ./Startup/startup_stm32f407vgtx.o
  .debug_rnglists
-                0x00000019       0x19 ./drivers/Src/03led_button_ext.o
+                0x00000019       0x19 ./drivers/Src/03led_button_ext2_PUres.o
  .debug_rnglists
                 0x00000032       0x40 ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_macro    0x00000000      0x573
- .debug_macro   0x00000000       0x98 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000098       0x8e ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000126       0x51 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000177      0x2b2 ./drivers/Src/03led_button_ext.o
- .debug_macro   0x00000429       0xc4 ./drivers/Src/03led_button_ext.o
+ .debug_macro   0x00000000       0x98 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000098       0x8e ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000126       0x51 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000177      0x2b2 ./drivers/Src/03led_button_ext2_PUres.o
+ .debug_macro   0x00000429       0xc4 ./drivers/Src/03led_button_ext2_PUres.o
  .debug_macro   0x000004ed       0x86 ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .comment        0x00000000       0x43
- .comment       0x00000000       0x43 ./drivers/Src/03led_button_ext.o
+ .comment       0x00000000       0x43 ./drivers/Src/03led_button_ext2_PUres.o
                                  0x44 (size before relaxing)
  .comment       0x00000043       0x44 ./drivers/Src/stm32f407xx_gpio_driver.o
 
 .debug_frame    0x00000000      0x1d0
- .debug_frame   0x00000000       0x58 ./drivers/Src/03led_button_ext.o
+ .debug_frame   0x00000000       0x58 ./drivers/Src/03led_button_ext2_PUres.o
  .debug_frame   0x00000058      0x14c ./drivers/Src/stm32f407xx_gpio_driver.o
  .debug_frame   0x000001a4       0x2c C:/ST/STM32CubeIDE_1.17.0/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.win32_1.0.0.202411081344/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard\libc_nano.a(libc_a-init.o)

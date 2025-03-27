@@ -1,56 +1,32 @@
-01:02:04 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+19:18:27 **** Clean-only build of configuration Debug for project stm32f4xx_drivers ****
+make -j4 clean 
+rm -rf ./drivers/Src/02led_button.cyclo ./drivers/Src/02led_button.d ./drivers/Src/02led_button.o ./drivers/Src/02led_button.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su
+rm -rf ./Startup/startup_stm32f407vgtx.d ./Startup/startup_stm32f407vgtx.o
+rm -rf ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+rm -rf default.size.stdout stm32f4xx_drivers.elf stm32f4xx_drivers.list stm32f4xx_drivers.map
+ 
+19:18:28 **** Build of configuration Debug for project stm32f4xx_drivers ****
 make -j4 all 
-arm-none-eabi-gcc "../drivers/Src/01led_toggle.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/mySTM32Proj/MCU1/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/01led_toggle.d" -MT"drivers/Src/01led_toggle.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/01led_toggle.o"
+arm-none-eabi-gcc "../drivers/Src/03led_button_ext.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/mySTM32Proj/MCU1/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/03led_button_ext.d" -MT"drivers/Src/03led_button_ext.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/03led_button_ext.o"
+arm-none-eabi-gcc "../drivers/Src/stm32f407xx_gpio_driver.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/mySTM32Proj/MCU1/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"drivers/Src/stm32f407xx_gpio_driver.d" -MT"drivers/Src/stm32f407xx_gpio_driver.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "drivers/Src/stm32f407xx_gpio_driver.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Startup/startup_stm32f407vgtx.d" -MT"Startup/startup_stm32f407vgtx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f407vgtx.o" "../Startup/startup_stm32f407vgtx.s"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/mySTM32Proj/MCU1/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F407G_DISC1 -DSTM32F4 -DSTM32F407VGTx -c -I../Inc -I"C:/mySTM32Proj/MCU1/stm32f4xx_drivers/drivers/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
 arm-none-eabi-gcc -o "stm32f4xx_drivers.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\mySTM32Proj\MCU1\stm32f4xx_drivers\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32f4xx_drivers.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: stm32f4xx_drivers.elf
  
 arm-none-eabi-size  stm32f4xx_drivers.elf 
 arm-none-eabi-objdump -h -S stm32f4xx_drivers.elf  > "stm32f4xx_drivers.list"
    text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
+   1776	      0	   1568	   3344	    d10	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  
 Finished building: stm32f4xx_drivers.list
  
-01:02:13 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
+19:18:52 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
 make -j4 all 
 arm-none-eabi-size  stm32f4xx_drivers.elf 
    text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
-Finished building: default.size.stdout
- 
-01:03:08 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
-Finished building: default.size.stdout
- 
-01:07:10 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
-Finished building: default.size.stdout
- 
-01:07:30 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
-Finished building: default.size.stdout
- 
-01:07:59 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
-Finished building: default.size.stdout
- 
-01:11:26 **** Incremental Build of configuration Debug for project stm32f4xx_drivers ****
-make -j4 all 
-arm-none-eabi-size  stm32f4xx_drivers.elf 
-   text	   data	    bss	    dec	    hex	filename
-   1628	      0	   1568	   3196	    c7c	stm32f4xx_drivers.elf
+   1776	      0	   1568	   3344	    d10	stm32f4xx_drivers.elf
 Finished building: default.size.stdout
  

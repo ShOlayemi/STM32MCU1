@@ -5,15 +5,12 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../drivers/Src/03led_button_ext2_PUres.c \
 ../drivers/Src/stm32f407xx_gpio_driver.c 
 
 OBJS += \
-./drivers/Src/03led_button_ext2_PUres.o \
 ./drivers/Src/stm32f407xx_gpio_driver.o 
 
 C_DEPS += \
-./drivers/Src/03led_button_ext2_PUres.d \
 ./drivers/Src/stm32f407xx_gpio_driver.d 
 
 
@@ -24,7 +21,7 @@ drivers/Src/%.o drivers/Src/%.su drivers/Src/%.cyclo: ../drivers/Src/%.c drivers
 clean: clean-drivers-2f-Src
 
 clean-drivers-2f-Src:
-	-$(RM) ./drivers/Src/03led_button_ext2_PUres.cyclo ./drivers/Src/03led_button_ext2_PUres.d ./drivers/Src/03led_button_ext2_PUres.o ./drivers/Src/03led_button_ext2_PUres.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su
+	-$(RM) ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su
 
 .PHONY: clean-drivers-2f-Src
 

@@ -352,3 +352,55 @@ void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx, uint8_t PinNumber)
 	pGPIOx->ODR  ^= ( 1 << PinNumber); // pGPIOx->ODR = pGPIOx->ODR ^ ( 1 << PinNumber)
 }
 
+/*********************************************************************
+ * @fn      		  - GPIO IRQ_Config
+ *
+ * @brief             -
+ *
+ * @param[in]         -
+ * @param[in]         -
+ * @param[in]         -
+ *
+ * @return            -
+ *
+ * @Note              -
+
+ */
+void GPIO_IRQConfig(uint8_t IRQNumber,  uint8_t IRQPriority, uint8_t EnorDi)
+{
+	if (EnorDi == ENABLE)
+	{
+		if (IRQNumber <= 31)
+		{
+//			program ISER0 Register
+			*NVIC_ISER0 |= (1 << IRQNumber);
+		}else if (IRQNumber > 31 && IRQNumber < 64)
+		{
+//			program ISER1 Register 32 to 63
+			*NVIC_ISER1 |= (1 << (IRQNumber % 32));
+		}
+		else if (IRQNumber >= 64 && IRQNumber < 96)
+		{
+			//			program ISER2 Register 64 to 95
+			*NVIC_ISER2 |= (1 << (IRQNumber % 64));
+		}
+	}else
+	{
+		if (IRQNumber <= 31)
+		{
+//			program ICER0 Register
+			*NVIC_ICER0 |= (1 << IRQNumber);
+		}else if (IRQNumber > 31 && IRQNumber < 64)
+			{
+			//			program ICER1 Register
+			*NVIC_ICER1 |= (1 << (IRQNumber % 32));
+			}
+		else if (IRQNumber >= 64 && IRQNumber < 96)
+		{
+			//			program ICER2 Register
+			*NVIC_ICER2 |= (1 << (IRQNumber % 64));
+		}
+
+	}
+
+}

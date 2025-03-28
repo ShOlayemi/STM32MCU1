@@ -11,6 +11,23 @@
 #include <stdint.h>
 
 #define __vo	volatile
+/*************************************START: PROCESSOR SPECIFIC DETAILS************************/
+/*
+ * ARM Cortex Mx Processor NVIC ISERx register Addresses
+ */
+#define NVIC_ISER0					((__vo uint32_t*)0xE000E100)
+#define NVIC_ISER1					((__vo uint32_t*)0xE000E104)
+#define NVIC_ISER2					((__vo uint32_t*)0xE000E108)
+#define NVIC_ISER3					((__vo uint32_t*)0xE000E10C)
+
+/*
+ * ARM Cortex Mx Processor NVIC ICERx register Addresses
+ */
+#define NVIC_ICER0					((__vo uint32_t*)0XE000E180)
+#define NVIC_ICER1					((__vo uint32_t*)0XE000E184)
+#define NVIC_ICER2					((__vo uint32_t*)0XE000E188)
+#define NVIC_ICER3					((__vo uint32_t*)0XE000E18C)
+
 
 /*Define the base addresses of flash and SRAM memories
 */

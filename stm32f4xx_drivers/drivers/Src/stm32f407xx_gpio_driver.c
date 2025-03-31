@@ -62,7 +62,7 @@ void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx, uint8_t EnorDi)
 			GPIOA_PCLK_DI();
 		}else if (pGPIOx == GPIOB)
 		{
-			GPIOB_PCLK_EN();
+			GPIOB_PCLK_DI();
 		}else if (pGPIOx == GPIOC)
 		{
 			GPIOC_PCLK_DI();

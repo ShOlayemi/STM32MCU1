@@ -11,7 +11,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:PERIADC\ Debug/activeLaunchMode
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F407xx_Drivers\ Debug\ (1)/activeLaunchMode=run
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F407xx_Drivers\ Debug\ (1)/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:STM32F407xx_Drivers\ Debug/activeLaunchMode=debug
-org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers/activeLaunchMode=run
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:stm32f4xx_drivers/activeLaunchTarget=null\:---
 org.eclipse.launchbar.core.descriptorType.default\:STM32F407xx_Drivers\ Debug\ (1)/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:STM32F407xx_Drivers\ Debug/activeLaunchMode=run

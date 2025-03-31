@@ -1,5 +1,6 @@
 "./Src/syscalls.o"
 "./Src/sysmem.o"
 "./Startup/startup_stm32f407vgtx.o"
-"./drivers/Src/04button_interrupt.o"
+"./drivers/Src/06spi_tx_testing.o"
 "./drivers/Src/stm32f407xx_gpio_driver.o"
+"./drivers/Src/stm32f407xx_spi_driver.o"

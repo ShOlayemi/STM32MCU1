@@ -5,16 +5,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../drivers/Src/04button_interrupt.c \
-../drivers/Src/stm32f407xx_gpio_driver.c 
+../drivers/Src/06spi_tx_testing.c \
+../drivers/Src/stm32f407xx_gpio_driver.c \
+../drivers/Src/stm32f407xx_spi_driver.c 
 
 OBJS += \
-./drivers/Src/04button_interrupt.o \
-./drivers/Src/stm32f407xx_gpio_driver.o 
+./drivers/Src/06spi_tx_testing.o \
+./drivers/Src/stm32f407xx_gpio_driver.o \
+./drivers/Src/stm32f407xx_spi_driver.o 
 
 C_DEPS += \
-./drivers/Src/04button_interrupt.d \
-./drivers/Src/stm32f407xx_gpio_driver.d 
+./drivers/Src/06spi_tx_testing.d \
+./drivers/Src/stm32f407xx_gpio_driver.d \
+./drivers/Src/stm32f407xx_spi_driver.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +27,7 @@ drivers/Src/%.o drivers/Src/%.su drivers/Src/%.cyclo: ../drivers/Src/%.c drivers
 clean: clean-drivers-2f-Src
 
 clean-drivers-2f-Src:
-	-$(RM) ./drivers/Src/04button_interrupt.cyclo ./drivers/Src/04button_interrupt.d ./drivers/Src/04button_interrupt.o ./drivers/Src/04button_interrupt.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su
+	-$(RM) ./drivers/Src/06spi_tx_testing.cyclo ./drivers/Src/06spi_tx_testing.d ./drivers/Src/06spi_tx_testing.o ./drivers/Src/06spi_tx_testing.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su ./drivers/Src/stm32f407xx_spi_driver.cyclo ./drivers/Src/stm32f407xx_spi_driver.d ./drivers/Src/stm32f407xx_spi_driver.o ./drivers/Src/stm32f407xx_spi_driver.su
 
 .PHONY: clean-drivers-2f-Src
 

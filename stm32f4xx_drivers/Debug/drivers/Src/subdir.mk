@@ -5,17 +5,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../drivers/Src/06spi_tx_testing.c \
+../drivers/Src/07spi_txonly_arduino.c \
 ../drivers/Src/stm32f407xx_gpio_driver.c \
 ../drivers/Src/stm32f407xx_spi_driver.c 
 
 OBJS += \
-./drivers/Src/06spi_tx_testing.o \
+./drivers/Src/07spi_txonly_arduino.o \
 ./drivers/Src/stm32f407xx_gpio_driver.o \
 ./drivers/Src/stm32f407xx_spi_driver.o 
 
 C_DEPS += \
-./drivers/Src/06spi_tx_testing.d \
+./drivers/Src/07spi_txonly_arduino.d \
 ./drivers/Src/stm32f407xx_gpio_driver.d \
 ./drivers/Src/stm32f407xx_spi_driver.d 
 
@@ -27,7 +27,7 @@ drivers/Src/%.o drivers/Src/%.su drivers/Src/%.cyclo: ../drivers/Src/%.c drivers
 clean: clean-drivers-2f-Src
 
 clean-drivers-2f-Src:
-	-$(RM) ./drivers/Src/06spi_tx_testing.cyclo ./drivers/Src/06spi_tx_testing.d ./drivers/Src/06spi_tx_testing.o ./drivers/Src/06spi_tx_testing.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su ./drivers/Src/stm32f407xx_spi_driver.cyclo ./drivers/Src/stm32f407xx_spi_driver.d ./drivers/Src/stm32f407xx_spi_driver.o ./drivers/Src/stm32f407xx_spi_driver.su
+	-$(RM) ./drivers/Src/07spi_txonly_arduino.cyclo ./drivers/Src/07spi_txonly_arduino.d ./drivers/Src/07spi_txonly_arduino.o ./drivers/Src/07spi_txonly_arduino.su ./drivers/Src/stm32f407xx_gpio_driver.cyclo ./drivers/Src/stm32f407xx_gpio_driver.d ./drivers/Src/stm32f407xx_gpio_driver.o ./drivers/Src/stm32f407xx_gpio_driver.su ./drivers/Src/stm32f407xx_spi_driver.cyclo ./drivers/Src/stm32f407xx_spi_driver.d ./drivers/Src/stm32f407xx_spi_driver.o ./drivers/Src/stm32f407xx_spi_driver.su
 
 .PHONY: clean-drivers-2f-Src
 

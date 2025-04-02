@@ -5,16 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Src/syscalls.c \
-../Src/sysmem.c 
+../Src/syscalls.c 
 
 OBJS += \
-./Src/syscalls.o \
-./Src/sysmem.o 
+./Src/syscalls.o 
 
 C_DEPS += \
-./Src/syscalls.d \
-./Src/sysmem.d 
+./Src/syscalls.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +21,7 @@ Src/%.o Src/%.su Src/%.cyclo: ../Src/%.c Src/subdir.mk
 clean: clean-Src
 
 clean-Src:
-	-$(RM) ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su ./Src/sysmem.cyclo ./Src/sysmem.d ./Src/sysmem.o ./Src/sysmem.su
+	-$(RM) ./Src/syscalls.cyclo ./Src/syscalls.d ./Src/syscalls.o ./Src/syscalls.su
 
 .PHONY: clean-Src
 

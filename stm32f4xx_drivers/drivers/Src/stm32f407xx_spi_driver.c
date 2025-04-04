@@ -576,23 +576,23 @@ static void  spi_ovr_err_interrupt_handle(SPI_Handle_t *pSPIHandle)
 }
 
 
-//void SPI_CloseTransmisson(SPI_Handle_t *pSPIHandle)
-//{
-//	pSPIHandle->pSPIx->CR2 &= ~( 1 << SPI_CR2_TXEIE);
-//	pSPIHandle->pTxBuffer = NULL;
-//	pSPIHandle->TxLen = 0;
-//	pSPIHandle->TxState = SPI_READY;
-//
-//}
-//
-//void SPI_CloseReception(SPI_Handle_t *pSPIHandle)
-//{
-//	pSPIHandle->pSPIx->CR2 &= ~( 1 << SPI_CR2_RXNEIE);
-//	pSPIHandle->pRxBuffer = NULL;
-//	pSPIHandle->RxLen = 0;
-//	pSPIHandle->RxState = SPI_READY;
-//
-//}
+void SPI_CloseTransmisson(SPI_Handle_t *pSPIHandle)
+{
+	pSPIHandle->pSPIx->CR2 &= ~( 1 << SPI_CR2_TXEIE);
+	pSPIHandle->pTxBuffer = NULL;
+	pSPIHandle->TxLen = 0;
+	pSPIHandle->TxState = SPI_READY;
+
+}
+
+void SPI_CloseReception(SPI_Handle_t *pSPIHandle)
+{
+	pSPIHandle->pSPIx->CR2 &= ~( 1 << SPI_CR2_RXNEIE);
+	pSPIHandle->pRxBuffer = NULL;
+	pSPIHandle->RxLen = 0;
+	pSPIHandle->RxState = SPI_READY;
+
+}
 
 
 
@@ -607,9 +607,9 @@ void SPI_ClearOVRFlag(SPI_RegDef_t *pSPIx)
 
 
 
-//__weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle,uint8_t AppEv)
-//{
-//
-//	//This is a weak implementation . the user application may override this function.
-//}
+__weak void SPI_ApplicationEventCallback(SPI_Handle_t *pSPIHandle,uint8_t AppEv)
+{
+
+	//This is a weak implementation . the user application may override this function.
+}
 

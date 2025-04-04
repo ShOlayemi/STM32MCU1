@@ -8,9 +8,11 @@
 #ifndef INC_STM32F407XX_H_
 #define INC_STM32F407XX_H_
 
+#include <stddef.h>
 #include <stdint.h>
 
 #define __vo	volatile
+#define __weak __attribute__((weak))
 /*************************************START: PROCESSOR SPECIFIC DETAILS************************/
 /*
  * ARM Cortex Mx Processor NVIC ISERx register Addresses
@@ -344,6 +346,13 @@ typedef struct
 #define IRQ_NO_EXTI4		10
 #define IRQ_NO_EXTI9_5		23
 #define IRQ_NO_EXTI15_10	40
+
+
+#define IRQ_NO_SPI1			35
+#define IRQ_NO_SPI2			36
+#define IRQ_NO_SPI3			51
+
+
 
 /*
  * Macros for all the possible priority levels

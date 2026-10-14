@@ -187,7 +187,7 @@ void SPI_SendData(SPI_RegDef_t *pSPIx,uint8_t *pTxBuffer, uint32_t Len)
 			pSPIx->DR =   *((uint16_t*)pTxBuffer);
 			Len--;
 			Len--;
-			(uint16_t*)pTxBuffer++;
+			pTxBuffer += 2;
 		}else
 		{
 			//8 bit DFF
@@ -228,7 +228,7 @@ void SPI_ReceiveData(SPI_RegDef_t *pSPIx, uint8_t *pRxBuffer, uint32_t Len)
 				 *((uint16_t*)pRxBuffer) = pSPIx->DR ;
 				Len--;
 				Len--;
-				(uint16_t*)pRxBuffer++;
+				pRxBuffer += 2;
 			}else
 			{
 				//8 bit DFF
@@ -358,7 +358,7 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 		else if(IRQNumber >= 64 && IRQNumber < 96 )
 		{
 			//program ISER2 register //64 to 95
-			*NVIC_ISER3 |= ( 1 << (IRQNumber % 64) );
+			*NVIC_ISER2 |= ( 1 << (IRQNumber % 64) );
 		}
 	}else
 	{
@@ -371,10 +371,10 @@ void SPI_IRQInterruptConfig(uint8_t IRQNumber, uint8_t EnorDi)
 			//program ICER1 register
 			*NVIC_ICER1 |= ( 1 << (IRQNumber % 32) );
 		}
-		else if(IRQNumber >= 6 && IRQNumber < 96 )
+		else if(IRQNumber >= 64 && IRQNumber < 96 )
 		{
 			//program ICER2 register
-			*NVIC_ICER3 |= ( 1 << (IRQNumber % 64) );
+			*NVIC_ICER2 |= ( 1 << (IRQNumber % 64) );
 		}
 	}
 
@@ -508,7 +508,7 @@ static void  spi_txe_interrupt_handle(SPI_Handle_t *pSPIHandle)
 		pSPIHandle->pSPIx->DR =   *((uint16_t*)pSPIHandle->pTxBuffer);
 		pSPIHandle->TxLen--;
 		pSPIHandle->TxLen--;
-		(uint16_t*)pSPIHandle->pTxBuffer++;
+		pSPIHandle->pTxBuffer += 2;
 	}else
 	{
 		//8 bit DFF

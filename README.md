@@ -90,6 +90,5 @@ I learned register-level driver design through FastBit Embedded Brain Academy's 
 - In 16-bit frame mode, `(uint16_t*)pTxBuffer++` advances the buffer by one byte instead of two.
 - `EXTI->IMR` unmasking is commented out in `GPIO_Init`.
 - I2C and USART have base addresses in the header but no driver yet.
-- Build output (`Debug/`, `.elf`, `.o`) and IDE metadata are committed and should be removed and ignored.
 
 Planned: fix the bugs above, then add I2C and USART drivers and a small sensor project that uses them.

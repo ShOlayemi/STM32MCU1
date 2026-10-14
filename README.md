@@ -86,9 +86,6 @@ I learned register-level driver design through FastBit Embedded Brain Academy's 
 
 ## Known issues and next steps
 
-- `SPI_IRQInterruptConfig` writes IRQs 64 to 95 to ISER3/ICER3 instead of ISER2/ICER2, and the disable path checks `>= 6` instead of `>= 64`.
-- In 16-bit frame mode, `(uint16_t*)pTxBuffer++` advances the buffer by one byte instead of two.
-- `EXTI->IMR` unmasking is commented out in `GPIO_Init`.
 - I2C and USART have base addresses in the header but no driver yet.
 
-Planned: fix the bugs above, then add I2C and USART drivers and a small sensor project that uses them.
+Planned: add I2C and USART drivers and a small sensor project that uses them.

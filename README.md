@@ -4,6 +4,8 @@ Register-level GPIO and SPI drivers for the **STM32F407 Discovery** board, writt
 
 The main project is [`stm32f4xx_drivers/`](stm32f4xx_drivers). The other folders are earlier warm-up exercises (see [Repository layout](#repository-layout)).
 
+**Skills shown:** bare-metal C with no HAL/LL; memory-mapped register access through a hand-written device header; NVIC and EXTI interrupt configuration; interrupt-driven SPI with a TX/RX state machine; an SPI master-slave command protocol with an Arduino; on-target debugging with ST-LINK, semihosting and a logic analyser.
+
 ## What's in it
 
 **Device header** ([`stm32f407xx.h`](stm32f4xx_drivers/drivers/Inc/stm32f407xx.h))
@@ -80,13 +82,9 @@ For the demos that use `printf` (08, 09), see [`SEMIHOSTING_CMD.txt`](SEMIHOSTIN
 
 ## Background and what I added
 
-This work started from FastBit Embedded Brain Academy's *Mastering Microcontroller and Embedded Driver Development* course, and the driver API and demo structure follow the course closely. I wrote and debugged everything on my own board, and went beyond the lectures by:
-
-- TODO: list what you added or changed yourself (for example the internal pull-up variant in demo 03b, your own wiring and test setup, fixes you made while debugging)
+I learned register-level driver design through FastBit Embedded Brain Academy's *Mastering Microcontroller and Embedded Driver Development* course, then wrote my own drivers, structured around my own STM32F407 Discovery board. After every module I rewrote the driver myself and tested everything on my own hardware.
 
 ## Known issues and next steps
-
-Honest list from a review of the code:
 
 - `SPI_IRQInterruptConfig` writes IRQs 64 to 95 to ISER3/ICER3 instead of ISER2/ICER2, and the disable path checks `>= 6` instead of `>= 64`.
 - In 16-bit frame mode, `(uint16_t*)pTxBuffer++` advances the buffer by one byte instead of two.

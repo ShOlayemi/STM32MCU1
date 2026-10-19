@@ -430,3 +430,69 @@ typedef struct
 #include "stm32f407xx_spi_driver.h"
 
 #endif /* INC_STM32F407XX_H_ */
+
+/* ---------------------------------------------------------------
+ * Unit-test build only (-DUNIT_TEST): point every peripheral macro
+ * at a fake register struct in RAM so drivers can run on a PC.
+ * The real firmware build never sees this block.
+ * ------------------------------------------------------------- */
+#ifdef UNIT_TEST
+extern GPIO_RegDef_t   fake_GPIOA, fake_GPIOB, fake_GPIOC, fake_GPIOD, fake_GPIOE,
+                       fake_GPIOF, fake_GPIOG, fake_GPIOH, fake_GPIOI;
+extern RCC_RegDef_t    fake_RCC;
+extern EXTI_RegDef_t   fake_EXTI;
+extern SYSCFG_RegDef_t fake_SYSCFG;
+extern SPI_RegDef_t    fake_SPI1, fake_SPI2, fake_SPI3;
+extern uint32_t        fake_NVIC_ISER[4], fake_NVIC_ICER[4], fake_NVIC_IPR[60];
+
+#undef GPIOA
+#undef GPIOB
+#undef GPIOC
+#undef GPIOD
+#undef GPIOE
+#undef GPIOF
+#undef GPIOG
+#undef GPIOH
+#undef GPIOI
+#define GPIOA (&fake_GPIOA)
+#define GPIOB (&fake_GPIOB)
+#define GPIOC (&fake_GPIOC)
+#define GPIOD (&fake_GPIOD)
+#define GPIOE (&fake_GPIOE)
+#define GPIOF (&fake_GPIOF)
+#define GPIOG (&fake_GPIOG)
+#define GPIOH (&fake_GPIOH)
+#define GPIOI (&fake_GPIOI)
+
+#undef RCC
+#undef EXTI
+#undef SYSCFG
+#undef SPI1
+#undef SPI2
+#undef SPI3
+#define RCC    (&fake_RCC)
+#define EXTI   (&fake_EXTI)
+#define SYSCFG (&fake_SYSCFG)
+#define SPI1   (&fake_SPI1)
+#define SPI2   (&fake_SPI2)
+#define SPI3   (&fake_SPI3)
+
+#undef NVIC_ISER0
+#undef NVIC_ISER1
+#undef NVIC_ISER2
+#undef NVIC_ISER3
+#undef NVIC_ICER0
+#undef NVIC_ICER1
+#undef NVIC_ICER2
+#undef NVIC_ICER3
+#undef NVIC_PR_BASE_ADDR
+#define NVIC_ISER0 ((__vo uint32_t*)&fake_NVIC_ISER[0])
+#define NVIC_ISER1 ((__vo uint32_t*)&fake_NVIC_ISER[1])
+#define NVIC_ISER2 ((__vo uint32_t*)&fake_NVIC_ISER[2])
+#define NVIC_ISER3 ((__vo uint32_t*)&fake_NVIC_ISER[3])
+#define NVIC_ICER0 ((__vo uint32_t*)&fake_NVIC_ICER[0])
+#define NVIC_ICER1 ((__vo uint32_t*)&fake_NVIC_ICER[1])
+#define NVIC_ICER2 ((__vo uint32_t*)&fake_NVIC_ICER[2])
+#define NVIC_ICER3 ((__vo uint32_t*)&fake_NVIC_ICER[3])
+#define NVIC_PR_BASE_ADDR ((__vo uint32_t*)&fake_NVIC_IPR[0])
+#endif /* UNIT_TEST */

@@ -1,0 +1,40 @@
+---
+:project:
+  :build_root: build
+  :test_file_prefix: test_
+  :use_mocks: TRUE
+  :use_test_preprocessor: :none
+  :use_backtrace: :simple
+
+:paths:
+  :test:
+    - +:test/**
+    - -:test/support
+  :source:
+    - ../stm32f4xx_drivers/drivers/Src
+  :include:
+    - ../stm32f4xx_drivers/drivers/Inc
+  :support:
+    - test/support
+  :libraries: []
+
+:extension:
+  :executable: .out
+
+:defines:
+  :test:
+    - TEST
+    - UNIT_TEST
+
+:cmock:
+  :mock_prefix: mock_
+  :when_no_prototypes: :warn
+  :enforce_strict_ordering: TRUE
+  :plugins:
+    - :ignore
+    - :callback
+
+:plugins:
+  :enabled:
+    - report_tests_pretty_stdout
+...

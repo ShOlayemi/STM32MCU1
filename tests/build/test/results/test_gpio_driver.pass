@@ -1,0 +1,23 @@
+---
+:source:
+  :file: test/test_gpio_driver.c
+  :dirname: test
+  :basename: test_gpio_driver.c
+:successes:
+- :test: test_GPIO_Init_sets_pin5_as_output
+  :line: 12
+  :message: ''
+  :unity_test_time: 0
+- :test: test_GPIO_Init_falling_edge_interrupt_on_PD6
+  :line: 26
+  :message: ''
+  :unity_test_time: 0
+:failures: []
+:ignores: []
+:counts:
+  :total: 2
+  :passed: 2
+  :failed: 0
+  :ignored: 0
+:stdout: []
+:time: 0.0048061969864647835

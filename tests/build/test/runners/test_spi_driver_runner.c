@@ -24,6 +24,7 @@ extern void tearDown(void);
 extern void test_IRQ71_enable_lands_in_ISER2_bit7(void);
 extern void test_IRQ71_disable_lands_in_ICER2_bit7(void);
 extern void test_IRQ40_enable_lands_in_ISER1_bit8(void);
+extern void test_SPI_SendData_16bit_sends_second_word_correctly(void);
 
 
 /*=======Mock Management=====*/
@@ -102,6 +103,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_IRQ40_enable_lands_in_ISER1_bit8");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_SPI_SendData_16bit_sends_second_word_correctly");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
@@ -109,7 +112,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 #endif
   UnityBegin("test_spi_driver.c");
 
-  struct UnityRunTestParameters run_test_params_arr[3];
+  struct UnityRunTestParameters run_test_params_arr[4];
 
   run_test_params_arr[0].func = test_IRQ71_enable_lands_in_ISER2_bit7;
   run_test_params_arr[0].name = "test_IRQ71_enable_lands_in_ISER2_bit7";
@@ -120,8 +123,11 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   run_test_params_arr[2].func = test_IRQ40_enable_lands_in_ISER1_bit8;
   run_test_params_arr[2].name = "test_IRQ40_enable_lands_in_ISER1_bit8";
   run_test_params_arr[2].line_num = 28;
+  run_test_params_arr[3].func = test_SPI_SendData_16bit_sends_second_word_correctly;
+  run_test_params_arr[3].name = "test_SPI_SendData_16bit_sends_second_word_correctly";
+  run_test_params_arr[3].line_num = 36;
 
-  for (int i = 0; i < 3; i++)
+  for (int i = 0; i < 4; i++)
   {
     run_test(run_test_params_arr[i].func, run_test_params_arr[i].name, run_test_params_arr[i].line_num);
   }

@@ -16,12 +16,16 @@
   :line: 28
   :message: ''
   :unity_test_time: 0
+- :test: test_SPI_SendData_16bit_sends_second_word_correctly
+  :line: 36
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 3
-  :passed: 3
+  :total: 4
+  :passed: 4
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0032318989979103208
+:time: 0.003581999975722283

@@ -30,3 +30,18 @@ void test_IRQ40_enable_lands_in_ISER1_bit8(void)
     SPI_IRQInterruptConfig(40, ENABLE);
     TEST_ASSERT_BITS_HIGH(1u << 8, fake_NVIC_ISER[1]);
 }
+
+/* Verifies: REQ-SPI-013 regression for the 16-bit buffer fix:
+   in 16-bit mode the buffer must advance 2 bytes per frame */
+void test_SPI_SendData_16bit_sends_second_word_correctly(void)
+{
+    uint16_t data[2] = {0x1234, 0xABCD};
+
+    fake_SPI2.CR1 |= (1u << 11);        /* DFF = 1: 16-bit frames          */
+    fake_SPI2.SR  |= SPI_TXE_FLAG;      /* TXE set so the wait loop exits  */
+
+    SPI_SendData(SPI2, (uint8_t *)data, 4);   /* 2 frames = 4 bytes */
+
+    /* DR keeps the last word written. With the old bug it would be 0xCD12. */
+    TEST_ASSERT_EQUAL_HEX16(0xABCD, (uint16_t)fake_SPI2.DR);
+}

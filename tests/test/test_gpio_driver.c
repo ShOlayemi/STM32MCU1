@@ -38,3 +38,52 @@ void test_GPIO_Init_falling_edge_interrupt_on_PD6(void)
     /* EXTICR[1] covers pins 4..7; pin 6 uses bits 11:8; port D code = 3 */
     TEST_ASSERT_EQUAL_HEX32(0x3u << 8, fake_SYSCFG.EXTICR[1] & (0xFu << 8));
 }
+
+/* Verifies: REQ-GPIO-003 pull-up */
+void test_GPIO_Init_enables_pullup_on_pin3(void)
+{
+    GPIO_Handle_t h = {0};
+    h.pGPIOx = GPIOA;
+    h.GPIO_PinConfig.GPIO_PinNumber      = 3;
+    h.GPIO_PinConfig.GPIO_PinMode        = GPIO_MODE_IN;
+    h.GPIO_PinConfig.GPIO_PinPuPdControl = GPIO_PIN_PU;
+
+    GPIO_Init(&h);
+
+    /* PUPDR bits 7:6 must be 01 (pull-up) */
+    TEST_ASSERT_EQUAL_HEX32(0x1u << (2 * 3), fake_GPIOA.PUPDR & (0x3u << (2 * 3)));
+}
+
+/* Verifies: REQ-GPIO-004 open-drain output */
+void test_GPIO_Init_sets_open_drain_on_pin2(void)
+{
+    GPIO_Handle_t h = {0};
+    h.pGPIOx = GPIOA;
+    h.GPIO_PinConfig.GPIO_PinNumber = 2;
+    h.GPIO_PinConfig.GPIO_PinMode   = GPIO_MODE_OUT;
+    h.GPIO_PinConfig.GPIO_PinOPType = GPIO_OP_TYPE_OD;
+
+    GPIO_Init(&h);
+
+    TEST_ASSERT_BITS_HIGH(1u << 2, fake_GPIOA.OTYPER);
+}
+
+/* Verifies: REQ-GPIO-005 regression for the EXTICR fix:
+   configuring a second pin must not wipe the first pin's port */
+void test_EXTICR_second_pin_keeps_first_pin_port(void)
+{
+    GPIO_Handle_t pd0 = {0}, pa1 = {0};
+    pd0.pGPIOx = GPIOD;
+    pd0.GPIO_PinConfig.GPIO_PinNumber = 0;
+    pd0.GPIO_PinConfig.GPIO_PinMode   = GPIO_MODE_IT_FT;
+    pa1.pGPIOx = GPIOA;
+    pa1.GPIO_PinConfig.GPIO_PinNumber = 1;
+    pa1.GPIO_PinConfig.GPIO_PinMode   = GPIO_MODE_IT_FT;
+
+    GPIO_Init(&pd0);
+    GPIO_Init(&pa1);
+
+    /* EXTICR[0]: pin 0 = bits 3:0 must still be port D (3); pin 1 = bits 7:4 = port A (0) */
+    TEST_ASSERT_EQUAL_HEX32(0x3u, fake_SYSCFG.EXTICR[0] & 0xFu);
+    TEST_ASSERT_EQUAL_HEX32(0x0u, fake_SYSCFG.EXTICR[0] & 0xF0u);
+}

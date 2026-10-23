@@ -23,6 +23,9 @@ extern void setUp(void);
 extern void tearDown(void);
 extern void test_GPIO_Init_sets_pin5_as_output(void);
 extern void test_GPIO_Init_falling_edge_interrupt_on_PD6(void);
+extern void test_GPIO_Init_enables_pullup_on_pin3(void);
+extern void test_GPIO_Init_sets_open_drain_on_pin2(void);
+extern void test_EXTICR_second_pin_keeps_first_pin_port(void);
 
 
 /*=======Mock Management=====*/
@@ -99,6 +102,12 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
       UNITY_PRINT_EOL();
       UnityPrint("  test_GPIO_Init_falling_edge_interrupt_on_PD6");
       UNITY_PRINT_EOL();
+      UnityPrint("  test_GPIO_Init_enables_pullup_on_pin3");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_GPIO_Init_sets_open_drain_on_pin2");
+      UNITY_PRINT_EOL();
+      UnityPrint("  test_EXTICR_second_pin_keeps_first_pin_port");
+      UNITY_PRINT_EOL();
       return 0;
     }
     return parse_status;
@@ -106,7 +115,7 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 #endif
   UnityBegin("test_gpio_driver.c");
 
-  struct UnityRunTestParameters run_test_params_arr[2];
+  struct UnityRunTestParameters run_test_params_arr[5];
 
   run_test_params_arr[0].func = test_GPIO_Init_sets_pin5_as_output;
   run_test_params_arr[0].name = "test_GPIO_Init_sets_pin5_as_output";
@@ -114,8 +123,17 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
   run_test_params_arr[1].func = test_GPIO_Init_falling_edge_interrupt_on_PD6;
   run_test_params_arr[1].name = "test_GPIO_Init_falling_edge_interrupt_on_PD6";
   run_test_params_arr[1].line_num = 26;
+  run_test_params_arr[2].func = test_GPIO_Init_enables_pullup_on_pin3;
+  run_test_params_arr[2].name = "test_GPIO_Init_enables_pullup_on_pin3";
+  run_test_params_arr[2].line_num = 43;
+  run_test_params_arr[3].func = test_GPIO_Init_sets_open_drain_on_pin2;
+  run_test_params_arr[3].name = "test_GPIO_Init_sets_open_drain_on_pin2";
+  run_test_params_arr[3].line_num = 58;
+  run_test_params_arr[4].func = test_EXTICR_second_pin_keeps_first_pin_port;
+  run_test_params_arr[4].name = "test_EXTICR_second_pin_keeps_first_pin_port";
+  run_test_params_arr[4].line_num = 73;
 
-  for (int i = 0; i < 2; i++)
+  for (int i = 0; i < 5; i++)
   {
     run_test(run_test_params_arr[i].func, run_test_params_arr[i].name, run_test_params_arr[i].line_num);
   }

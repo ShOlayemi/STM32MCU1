@@ -12,12 +12,24 @@
   :line: 26
   :message: ''
   :unity_test_time: 0
+- :test: test_GPIO_Init_enables_pullup_on_pin3
+  :line: 43
+  :message: ''
+  :unity_test_time: 0
+- :test: test_GPIO_Init_sets_open_drain_on_pin2
+  :line: 58
+  :message: ''
+  :unity_test_time: 0
+- :test: test_EXTICR_second_pin_keeps_first_pin_port
+  :line: 73
+  :message: ''
+  :unity_test_time: 0
 :failures: []
 :ignores: []
 :counts:
-  :total: 2
-  :passed: 2
+  :total: 5
+  :passed: 5
   :failed: 0
   :ignored: 0
 :stdout: []
-:time: 0.0048061969864647835
+:time: 0.0032622989965602756

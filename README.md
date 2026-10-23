@@ -1,6 +1,8 @@
 # STM32F407 Bare-Metal Drivers
 
+phase1-tests
 [![CI](https://github.com/ShOlayemi/STM32MCU1/actions/workflows/ci.yml/badge.svg)](https://github.com/ShOlayemi/STM32MCU1/actions/workflows/ci.yml)
+main
 
 Register-level GPIO and SPI drivers for the **STM32F407 Discovery** board, written in C without ST's HAL or LL libraries. Every peripheral is reached through a hand-written device header (base addresses, register structs, bit positions) and the drivers sit directly on top of it.
 

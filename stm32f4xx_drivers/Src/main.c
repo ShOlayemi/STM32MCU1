@@ -5,7 +5,7 @@
  *      Author: User
  */
 
-#include "stm32F407xx.h"
+#include "stm32f407xx.h"
 
 int main(void)
 {
